@@ -89,38 +89,46 @@
     <h3>1. Prompt: Recebendo dados do usuário</h3>
     <p>Código:</p>
     <code>
-        var nome = prompt("Digite seu nome:");
-        console.log("Nome digitado: " + nome);
+        function promptInput() {
+            var nome = prompt("Digite seu nome:");
+            console.log("Nome digitado: " + nome);
+        }
     </code>
-    <p>Resultado:</p>
+    <p><button onclick="promptInput()">Resultado:</button></p>
     <script>
-        var nome = prompt("Digite seu nome:");
-        console.log("Nome digitado: " + nome);
+        function promptInput() {
+            var nome = prompt("Digite seu nome:");
+            console.log("Nome digitado: " + nome);
+        }
     </script>
 
     <h3>2. Confirm: Obtendo confirmação do usuário</h3>
     <p>Código:</p>
     <code>
-        var confirmacao = confirm("Você deseja continuar?");
-        console.log("Confirmação: " + confirmacao);
+        function promptConfirmacaoInput() {
+            var confirmacao = confirm("Você deseja continuar?");
+            console.log("Confirmação: " + confirmacao);
+        }
     </code>
-    <p>Resultado:</p>
+    <p><button onclick="promptConfirmacaoInput()">Resultado:</button></p>
     <script>
-        var confirmacao = confirm("Você deseja continuar?");
-        console.log("Confirmação: " + confirmacao);
+        function promptConfirmacaoInput() {
+            var confirmacao = confirm("Você deseja continuar?");
+            console.log("Confirmação: " + confirmacao);
+        }
     </script>
 
     <h3>3. Input de Texto: Usando elementos de formulário</h3>
-    <p>Código:</p>
+    <p>Código (sem html TAGS):</p>
     <code>
-        <input type="text" id="campoTexto" placeholder="Digite algo">
-        <button onclick="obterTexto()">Obter Texto</button>
-        <script>
+        input type="text" id="campoTexto" placeholder="Digite algo" <br>
+        button onclick="obterTexto()">Obter Texto button <br>
+        script <br>
             function obterTexto() {
                 var texto = document.getElementById("campoTexto").value;
                 console.log("Texto digitado: " + texto);
-            }
-        </script>
+            } <br>
+        script
     </code>
     <p>Resultado:</p>
     <input type="text" id="campoTexto" placeholder="Digite algo">
