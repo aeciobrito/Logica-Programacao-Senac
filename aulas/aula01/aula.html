@@ -83,6 +83,56 @@
     </ul>
 
     <p><a href="../../index.html">Voltar ao Índice</a></p>
+
+    <h2>Diferentes Formas de Realizar Inputs em JavaScript</h2>
+
+    <h3>1. Prompt: Recebendo dados do usuário</h3>
+    <p>Código:</p>
+    <code>
+        var nome = prompt("Digite seu nome:");
+        console.log("Nome digitado: " + nome);
+    </code>
+    <p>Resultado:</p>
+    <script>
+        var nome = prompt("Digite seu nome:");
+        console.log("Nome digitado: " + nome);
+    </script>
+
+    <h3>2. Confirm: Obtendo confirmação do usuário</h3>
+    <p>Código:</p>
+    <code>
+        var confirmacao = confirm("Você deseja continuar?");
+        console.log("Confirmação: " + confirmacao);
+    </code>
+    <p>Resultado:</p>
+    <script>
+        var confirmacao = confirm("Você deseja continuar?");
+        console.log("Confirmação: " + confirmacao);
+    </script>
+
+    <h3>3. Input de Texto: Usando elementos de formulário</h3>
+    <p>Código:</p>
+    <code>
+        <input type="text" id="campoTexto" placeholder="Digite algo">
+        <button onclick="obterTexto()">Obter Texto</button>
+        <script>
+            function obterTexto() {
+                var texto = document.getElementById("campoTexto").value;
+                console.log("Texto digitado: " + texto);
+            }
+        </script>
+    </code>
+    <p>Resultado:</p>
+    <input type="text" id="campoTexto" placeholder="Digite algo">
+    <button onclick="obterTexto()">Obter Texto</button>
+    <script>
+        function obterTexto() {
+            var texto = document.getElementById("campoTexto").value;
+            console.log("Texto digitado: " + texto);
+        }
+    </script>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
 </body>
 
 </html>
