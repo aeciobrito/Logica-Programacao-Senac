@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="pt-BR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Aula 01 - [Título]</h1>
+    <h1>Aula 01 - Introdução ao JavaScript</h1>
+
+    <h2>O que é JavaScript?</h2>
+    <p>JavaScript é uma linguagem de programação de alto nível, interpretada, e orientada a objetos. Amplamente
+        utilizada para o desenvolvimento web, ela proporciona interatividade em páginas da web, tornando-as mais
+        dinâmicas e responsivas.</p>
+
+    <h2>Diferenciais do JavaScript</h2>
+    <ul>
+        <li>Executado no lado do cliente (navegador), proporcionando uma experiência mais ágil para o usuário.</li>
+        <li>Compatível com várias plataformas e navegadores.</li>
+        <li>Ampla comunidade e rica oferta de bibliotecas (ex: React, Angular, Vue) e frameworks.</li>
+        <li>Pode ser aplicado tanto no desenvolvimento front-end quanto no back-end (Node.js).</li>
+    </ul>
+
+    <h2>Hello World em JavaScript</h2>
+    <pre>
+        <code>
+            console.log("Hello World!");
+        </code>
+    </pre>
+
+    <h2>Execução da saída de dados em diferentes contextos</h2>
+
+    <h3>1. Escrevendo em um elemento do HTML, usando o innerHTML:</h3>
+    <p>Código:</p>
+    <code>
+        document.getElementById("saidaDeDados").innerHTML = "Hello World!";
+    </code>
+    <p>Resultado:</p>
+    <div id="saidaDeDados"></div>
+    <script>
+        document.getElementById("saidaDeDados").innerHTML = "Hello World!";
+    </script>
+
+    <h3>2. Escrevendo no HTML usando o document.write():</h3>
+    <p>Código:</p>
+    <code>
+        document.write("Hello World!");
+    </code>
+    <p>Resultado:</p>
+    <script>
+        document.write("Hello World!");
+    </script>
+
+    <h3>3. Escrevendo em uma caixa de alert, usando o window.alert():</h3>
+    <p>Código:</p>
+    <code>
+        window.alert("Hello World!");
+    </code>
+    <p>Resultado (recarregue a página):</p>
+    <script>
+        window.alert("Hello World!");
+    </script>
+
+    <h3>4. Escrevendo no navegedor, usando o consel.log(): </h3>
+    <p>Código:</p>
+    <code>
+        console.log("Hello World!");
+    </code>
+    <p>Resultado:</p>
+    <script>
+        console.log("Hello World!");
+    </script>
+
+    <h2>Relevância do JavaScript</h2>
+    <p>JavaScript é uma das linguagens mais populares de acordo com os seguintes índices:</p>
+    <ul>
+        <li><a href="https://www.tiobe.com/tiobe-index/" target="_blank">Índice TIOBE</a></li>
+        <li><a href="https://madnight.github.io/githut/#/pull_requests/2023/3" target="_blank">GitHub</a></li>
+        <li><a href="https://survey.stackoverflow.co/2023/#technology-most-popular-technologies" target="_blank">Stack
+                Overflow Developer Survey</a></li>
+    </ul>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
 </body>
+
 </html>
