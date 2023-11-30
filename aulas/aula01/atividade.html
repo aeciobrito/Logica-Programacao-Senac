@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +19,16 @@
 
     <script>
         function soma() {
+            const unidades = 4;
+
             var nota1 = parseFloat(document.getElementById("nota1").value);
             var nota2 = parseFloat(document.getElementById("nota2").value);
             var nota3 = parseFloat(document.getElementById("nota3").value);
             var nota4 = parseFloat(document.getElementById("nota4").value);
 
-            window.alert(nota1 + nota2 + nota3 + nota4);
+            var soma = nota1 + nota2 + nota3 + nota4;
+            var media = soma / unidades;
+            window.alert(media);
         }        
     </script>
 </body>
