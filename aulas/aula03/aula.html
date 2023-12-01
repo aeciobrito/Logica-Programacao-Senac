@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 03 - Estruturas Condicionais</title>
 </head>
 <body>
     <h1>Aula 03 - Estruturas Condicionais</h1>
+
+    <h2>1. Introdução às Estruturas Condicionais</h2>
+    <p>As estruturas condicionais permitem que um programa execute diferentes ações com base em condições específicas.</p>
+
+    <h2>2. if...else</h2>
+    <p>A estrutura `if...else` permite que você execute um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa.</p>
+
+    ```javascript
+    var idade = 18;
+
+    if (idade >= 18) {
+        console.log("Você é maior de idade.");
+    } else {
+        console.log("Você é menor de idade.");
+    }
+    ```
+
+    <h2>3. Operador Ternário</h2>
+    <p>O operador ternário é uma forma simplificada de escrever estruturas `if...else`.</p>
+
+    ```javascript
+    var idade = 18;
+    var mensagem = (idade >= 18) ? "Maior de idade" : "Menor de idade";
+    console.log(mensagem);
+    ```
+
+    <h2>4. switch</h2>
+    <p>A estrutura `switch` é utilizada quando se tem múltiplas condições a serem avaliadas.</p>
+
+    ```javascript
+    var diaSemana = 3;
+    
+    switch (diaSemana) {
+        case 1:
+            console.log("Domingo");
+            break;
+        case 2:
+            console.log("Segunda-feira");
+            break;
+        // ... outros casos
+        default:
+            console.log("Dia não encontrado");
+    }
+    ```
+
+    <h2>5. Exercício Prático</h2>
+    <p>Desenvolva um código que, com base na temperatura, exiba mensagens diferentes, como "Está quente", "Está frio" ou "Temperatura agradável". Utilize estruturas condicionais.</p>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
 </body>
 </html>
