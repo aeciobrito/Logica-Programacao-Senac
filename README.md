@@ -38,6 +38,10 @@ Sinta-se à vontade para explorar os códigos, a estrutura do curso, e aproveita
 
 ---
 
+## Links Adicionais
+
+- [Emmet Atalhos](https://code.visualstudio.com/docs/editor/emmet): Snippets do VSCode para desenvolvimento web
+
 **Aécio Mendes Brito**
 
 [Informática Para Internet - Senac São Paulo]
