@@ -17,7 +17,8 @@
     
     <button onclick="soma()">Exibir Média</button> 
 
-    <script>
+    <script>      
+
         function soma() {
             const unidades = 4;
 
@@ -30,12 +31,12 @@
             var media = soma / unidades;
 
             if (media >= 7)
-                alert("Aprovado: media " + media);
-            else if (media >= 5)
-                alert("Recuperação: media" + media);
+                window.alert("Média: "  + media + " Aprovad@!");
+            else if(media >= 5)
+                window.alert("Média: "  + media + " Recuperação!");
             else
-                alert("Reprovado: media " + media);
-        }        
+                window.alert("Média: "  + media + " Reprovad@!");
+        }
     </script>
 </body>
 </html>
