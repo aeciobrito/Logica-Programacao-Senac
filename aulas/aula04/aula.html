@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 04 - Estruturas de Repetição</title>
 </head>
 <body>
     <h1>Aula 04 - Estruturas de Repetição</h1>
+
+    <h2>1. While Loop</h2>
+    <p>O loop while é utilizado quando queremos executar um bloco de código enquanto uma condição for verdadeira.</p>
+
+    <pre>
+        <code>            
+            var contadorWhile = 0;
+    
+            while (contadorWhile < 5) {
+                console.log("Iteração While: " + contadorWhile);
+                contadorWhile++;
+            }            
+        </code>
+    </pre>
+    <script>
+        var contadorWhile = 0;
+
+        while (contadorWhile < 5) {
+            console.log("Iteração While: " + contadorWhile);
+            contadorWhile++;
+        }
+    </script>
+
+    <h2>2. Do-While Loop</h2>
+    <p>O loop do-while é semelhante ao while, mas a condição é verificada após a execução do bloco de código, garantindo que o bloco será executado pelo menos uma vez.</p>
+
+    <pre>
+        <code>
+        var contadorDoWhile = 0;
+
+        do {
+            console.log("Iteração Do-While: " + contadorDoWhile);
+            contadorDoWhile++;
+        } while (contadorDoWhile < 5);
+        </code>
+    </pre>
+    <script>
+        var contadorDoWhile = 0;
+
+        do {
+            console.log("Iteração Do-While: " + contadorDoWhile);
+            contadorDoWhile++;
+        } while (contadorDoWhile < 5);
+    </script>
+
+    <h2>3. For Loop</h2>
+    <p>O loop for é utilizado quando sabemos antecipadamente quantas vezes o bloco de código deve ser executado.</p>
+
+    <pre>
+        <code>
+            for (var i = 0; i < 5; i++) {
+                console.log("Iteração For: " + i);
+            }
+        </code>
+    </pre>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            console.log("Iteração For: " + i);
+        }
+    </script>
+
+    <h2>4. For-In Loop</h2>
+    <p>O loop for-in é usado para iterar sobre as propriedades de um objeto.</p>
+
+    <pre>
+        <code>
+        var carro = { marca: "Toyota", modelo: "Corolla", ano: 2022 };
+
+        for (var propriedade in carro) {
+            console.log(propriedade + ": " + carro[propriedade]);
+        }
+        </code>
+    </pre>
+
+    <script>
+        var carro = { marca: "Toyota", modelo: "Corolla", ano: 2022 };
+
+        for (var propriedade in carro) {
+            console.log(propriedade + ": " + carro[propriedade]);
+        }
+    </script>
+
+    <h2>5. For-Of Loop</h2>
+    <p>O loop for-of é usado para iterar sobre elementos iteráveis ​​como arrays e strings.</p>
+    
+    <pre>
+        <code>
+            var frutas = ["Maçã", "Banana", "Morango"];
+
+            for (var fruta of frutas) {
+                console.log("Fruta: " + fruta);
+            }
+        </code>
+    </pre>
+    <script>
+        var frutas = ["Maçã", "Banana", "Morango"];
+
+        for (var fruta of frutas) {
+            console.log("Fruta: " + fruta);
+        }
+    </script>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
 </body>
 </html>
