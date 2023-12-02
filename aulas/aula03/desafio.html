@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Conhecimentos Gerais</title>
+</head>
+<body>
+    <h1>Desafio - Quiz de Conhecimentos Gerais</h1>
+
+    <form id="quizForm">
+        <h3>Pergunta 1: Qual é a capital do Brasil?</h3>
+        <input type="text" id="resposta1" placeholder="Sua resposta..." required>
+
+        <h3>Pergunta 2: Qual é o maior oceano do mundo?</h3>
+        <input type="text" id="resposta2" placeholder="Sua resposta..." required>
+
+        <h3>Pergunta 3: Quem escreveu 'Romeu e Julieta'?</h3>
+        <input type="text" id="resposta3" placeholder="Sua resposta..." required>
+
+        <h3>Pergunta 4: Qual é o símbolo químico do ouro?</h3>
+        <input type="text" id="resposta4" placeholder="Sua resposta..." required>
+
+        <h3>Pergunta 5: Em que ano ocorreu a Independência do Brasil?</h3>
+        <input type="text" id="resposta5" placeholder="Sua resposta..." required>
+
+        <br>
+        <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarRespostas() {
+            var pontuacao = 0;
+
+            var resposta1 = document.getElementById("resposta1").value.toLowerCase();
+            var resposta2 = document.getElementById("resposta2").value.toLowerCase();
+            var resposta3 = document.getElementById("resposta3").value.toLowerCase();
+            var resposta4 = document.getElementById("resposta4").value.toLowerCase();
+            var resposta5 = document.getElementById("resposta5").value.toLowerCase();
+
+            if (resposta1 === "brasília") pontuacao++;
+            if (resposta2 === "pacífico") pontuacao++;
+            if (resposta3 === "shakespeare") pontuacao++;
+            if (resposta4 === "au") pontuacao++;
+            if (resposta5 === "1822") pontuacao++;
+
+            var resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "<h2>Sua pontuação: " + pontuacao + "/5</h2>";
+        }
+    </script>
+</body>
+</html>
