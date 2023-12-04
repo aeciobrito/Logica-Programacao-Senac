@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Funções em JavaScript</title>
+</head>
+
+<body>
+    <h1>Aula 06 - Introdução a Funções em JavaScript</h1>
+
+    <h2>O que são Funções?</h2>
+    <p>Funções são blocos de código reutilizáveis que podem ser definidos e chamados em diferentes partes do programa. Elas facilitam a organização e modularização do código.</p>
+
+    <h2>Declaração de Funções</h2>
+    <p>Uma função em JavaScript pode ser declarada da seguinte forma:</p>
+    <pre>
+        <code>
+            // Declaração de uma função simples
+            function saudacao() {
+                alert('Olá, seja bem-vindo!');
+            }
+        </code>
+    </pre>
+
+    <h2>Chamada de Funções</h2>
+    <p>Uma vez que uma função é declarada, ela pode ser chamada/executada em qualquer parte do código:</p>
+    <pre>
+        <code>
+            // Chamando a função saudacao
+            saudacao();
+        </code>
+    </pre>
+
+    <h2>Parâmetros e Retorno de Funções</h2>
+    <p>Funções podem receber parâmetros (dados de entrada) e retornar valores (dados de saída):</p>
+    <pre>
+        <code>
+            // Função com parâmetros e retorno
+            function soma(a, b) {
+                return a + b;
+            }
+
+            // Chamando a função soma
+            var resultado = soma(3, 5);
+            console.log('Resultado da soma:', resultado);
+        </code>
+    </pre>
+
+    <h2>Escopo de Variáveis</h2>
+    <p>Funções também possuem escopo, o que significa que as variáveis declaradas dentro de uma função não são acessíveis fora dela:</p>
+    <pre>
+        <code>
+            // Função com variável local
+            function exibirMensagem() {
+                var mensagem = 'Essa é uma mensagem local.';
+                console.log(mensagem);
+            }
+
+            // Tentativa de acessar a variável fora da função (resultará em erro)
+            console.log(mensagem);
+        </code>
+    </pre>
+
+    <h2>Exemplo Prático</h2>
+    <p>Vamos criar uma função que calcula a média de uma lista de números:</p>
+    <pre>
+        <code>
+            function calcularMedia(lista) {
+                var soma = 0;
+                for (var i = 0; i < lista.length; i++) {
+                    soma += lista[i];
+                }
+                return soma / lista.length;
+            }
+
+            var numeros = [5, 8, 12, 3, 9];
+            var media = calcularMedia(numeros);
+            console.log('Média dos números:', media);
+        </code>
+    </pre>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
+</body>
+
+</html>
