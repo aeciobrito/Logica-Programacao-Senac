@@ -41,6 +41,7 @@ Sinta-se à vontade para explorar os códigos, a estrutura do curso, e aproveita
 ## Links Adicionais
 
 - [Emmet Atalhos](https://code.visualstudio.com/docs/editor/emmet): Snippets do VSCode para desenvolvimento web
+- [Curso Gratuito Github](https://www.udemy.com/course/git-e-github-para-iniciantes): Snippets do VSCode para 
 
 **Aécio Mendes Brito**
 
