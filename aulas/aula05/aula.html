@@ -15,7 +15,7 @@
     <pre>
         <code>
             // Declaração e inicialização de uma lista
-            var frutas = ['Maçã', 'Banana', 'Uva'];
+            let frutas = ['Maçã', 'Banana', 'Uva'];
         </code>
     </pre>
 
@@ -24,10 +24,10 @@
     <pre>
         <code>
             // Acessando o primeiro elemento da lista
-            var primeiraFruta = frutas[0];
+            let primeiraFruta = frutas[0];
 
             // Acessando o segundo elemento da lista
-            var segundaFruta = frutas[1];
+            let segundaFruta = frutas[1];
         </code>
     </pre>
 
@@ -59,7 +59,7 @@
             // Exibindo os elementos da lista
             document.write("<h3>Frutas:</h3>");
             document.write("<ul>");
-            for (var i = 0; i < frutas.length; i++) {
+            for (let i = 0; i < frutas.length; i++) {
                 document.write("<li>" + frutas[i] + "</li>");
             }
             document.write("</ul>");
@@ -70,11 +70,37 @@
             // Exibindo a lista atualizada
             document.write("<h3>Frutas Atualizadas:</h3>");
             document.write("<ul>");
-            for (var i = 0; i < frutas.length; i++) {
+            for (let i = 0; i < frutas.length; i++) {
                 document.write("<li>" + frutas[i] + "</li>");
             }
             document.write("</ul>");
         </code>
+    </pre>
+
+    <h2>Manipulação de Strings como Listas</h2>
+    <p>Em JavaScript, é possível tratar strings como listas e realizar diversas operações.</p>
+    <pre>
+        <code>
+            // Declaração e inicialização de uma string
+            let texto = "JavaScript";
+
+            // Acessando caracteres da string como se fossem elementos de um array
+            for (var i = 0; i < texto.length; i++) {
+                console.log("Caractere na posição " + i + ": " + texto[i]);
+            }
+
+            // Revertendo uma string
+            let textoArray = texto.split('');
+            let arrayRevertido = textoArray.reverse();
+            let stringRevertida = arrayRevertido.join('');
+            console.log("String Revertida: " + stringRevertida);
+        </code>
+        <script>
+            let textoArray = texto.split('');
+            let arrayRevertido = textoArray.reverse();
+            let stringRevertida = arrayRevertido.join('');
+            console.log("String Revertida: " + stringRevertida);
+        </script>
     </pre>
 
     <p><a href="../../index.html">Voltar ao Índice</a></p>
