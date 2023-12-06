@@ -75,6 +75,34 @@
             }
             document.write("</ul>");
         </code>
+        <script>
+            // Declaração e inicialização de uma lista
+            let frutas = ['Maçã', 'Banana', 'Uva', 'Goiaba'];
+
+            // Exibindo os elementos da lista
+            document.write("<h3>Frutas:</h3>");
+            document.write("<ul>");
+
+            for (let i = 0; i < frutas.length; i++) {
+                document.write("<li>" + frutas[i] + "</li>");
+            }
+
+            document.write("</ul>");
+
+            // Adicionando um novo elemento à lista
+            frutas.push('Pêra');
+            frutas.unshift('Abacate');
+
+            // Exibindo a lista atualizada
+            document.write("<h3>Frutas Atualizadas:</h3>");
+            document.write("<ul>");
+
+            for (let i = 0; i < frutas.length; i++) {
+                document.write("<li>" + frutas[i] + "</li>");
+            }
+
+            document.write("</ul>");
+        </script>
     </pre>
 
     <h2>Manipulação de Strings como Listas</h2>
