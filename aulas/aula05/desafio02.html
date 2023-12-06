@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <h1>Lista de Compras</h1>
+
+    <input id="itemInput" type="text" placeholder="Digite um item...">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+
+    <ul id="listaCompras">
+        <!-- Itens serão adicionados dinamicamente aqui -->
+    </ul>
+
+    <p>Total de Itens: <span id="totalItens">0</span></p>
+
+    <script>
+        function adicionarItem() {            
+                atualizarTotalItens();
+            }        
+
+        function removerItem(linha) {            
+            atualizarTotalItens();
+        }
+
+        function atualizarTotalItens() {            
+        }
+    </script>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
+</body>
+
+</html>
