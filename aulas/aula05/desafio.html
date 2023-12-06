@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Tempo de Voltas</title>
+</head>
+
+<body>
+    <h1>Desafio - Tempo de Voltas</h1>
+
+    <script>
+        // Pergunta ao usuário a quantidade de voltas
+        let quantidadeVoltas = prompt("Quantidade de voltas que o corredor dará:");
+        quantidadeVoltas = parseInt(quantidadeVoltas);
+
+        // Criação dinâmica dos inputs para os tempos das voltas
+        for (let i = 1; i <= quantidadeVoltas; i++) {
+            document.write(`<label for="volta${i}">Tempo da Volta ${i} (segundos): </label>`);
+            document.write(`<input type="number" id="volta${i}" name="volta${i}" required><br>`);
+        }
+
+        // Botão para exibir resultados
+        document.write('<button onclick="exibirResultados()">Exibir Resultados</button>');
+
+        // Função para calcular e exibir os resultados
+        function exibirResultados() {
+            let tempos = [];
+
+            // Obtem os tempos das voltas
+            for (let i = 1; i <= quantidadeVoltas; i++) {
+                let tempo = document.getElementById(`volta${i}`).value;
+                tempo = parseInt(tempo);
+                tempos.push(tempo);
+            }
+
+            // Calcula a volta mais rápida
+            let voltaMaisRapida = tempos[0];
+            for (let i = 1; i < tempos.length; i++) {
+                if (tempos[i] < voltaMaisRapida) {
+                    voltaMaisRapida = tempos[i];
+                }
+            }
+
+            // Calcula a volta mais lenta
+            let voltaMaisLenta = tempos[0];
+            for (let i = 1; i < tempos.length; i++) {
+                if (tempos[i] > voltaMaisLenta) {
+                    voltaMaisLenta = tempos[i];
+                }
+            }
+
+            // Calcula a média de todas as voltas
+            let somaTempos = 0;
+            for (let i = 0; i < tempos.length; i++) {
+                somaTempos += tempos[i];
+            }
+            let mediaVoltas = somaTempos / quantidadeVoltas;
+
+            // Exibe os resultados
+            alert(`Volta mais rápida: ${voltaMaisRapida} segundos\nVolta mais lenta: ${voltaMaisLenta} segundos\nMédia de voltas: ${mediaVoltas.toFixed(2)} segundos`);
+        }
+    </script>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
+</body>
+
+</html>
