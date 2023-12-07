@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de Voltas</title>
+</head>
+<body>
+    <h1>Tempo de Voltas</h1>
+
+    <script>
+        // prompt - pedindo o total de voltas
+        // armazeno o total em uma variável
+        let quantidadeVoltas = prompt("Quantidade de voltas que o corredor fará: ");
+        quantidadeVoltas = parseInt(quantidadeVoltas);        
+        
+        // repetição, para cada volta, escreva no html: volta X <input>
+        for(let i = 1; i <= quantidadeVoltas; i++) {
+            document.write(`<label for="volta${i}">Tempo de Volta ${i} (segundos): </label>`);
+            document.write(`<input type="number" id="volta${i}" name="volta${i}" required><br>`);
+        }
+        
+        document.write('<button onclick="exibirResultados()">Exibir Resultados </button>');
+        // faria uma função para exibir os resultados, nela:
+        function exibirResultados() {
+            // criaria uma lista de tempos[]...
+            let tempos = [];
+
+            //...onde armazenaria o valor de cada volta
+            for(let i = 1; i <= quantidadeVoltas; i++) {
+                let tempo = document.getElementById(`volta${i}`).value;
+                tempo = parseInt(tempo);
+                tempos.push(tempo);
+
+                //tempos.push(parseInt(document.getElementById(`volta${i}`).value));                
+            }
+
+            // faria uma repetição, para pegar o menor valor
+            let voltaMaisRapida = tempos[0];
+
+            for(let i = 1; i < tempos.length; i++) {
+                if(tempos[i] < voltaMaisRapida)
+                    voltaMaisRapida = tempos[i];
+            }
+
+            // faria uma repetição, para pegar o maior valor
+            let voltaMaisLenta = tempos[0];
+
+            for(let i = 1; i < tempos.length; i++) {
+                //se a volta no tempo "i" for mais lenta, que a 'voltaMaisLenta'
+                if(tempos[i] > voltaMaisLenta) {
+                    //troca o valor da 'voltaMaisLenta', pelo 'tempos[i]'
+                    voltaMaisLenta = tempos[i];
+                }
+            }
+
+            // faria uma repetição, para calcular a media
+            let somaTempos = 0;
+            for(let i = 0; i < tempos.length; i++) {
+                somaTempos = somaTempos + tempos[i];                
+            }
+            
+            let mediaVoltas = somaTempos / quantidadeVoltas;
+
+            // usaria um alert para escrever os resultados
+            alert(`Volta mais rápida: ${voltaMaisRapida} segundos \nVolta mais lenta ${voltaMaisLenta} segundos \nMedia de voltas: ${mediaVoltas} segundos`)
+        }
+        
+    </script>
+</body>
+</html>
