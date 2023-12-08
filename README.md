@@ -41,7 +41,8 @@ Sinta-se à vontade para explorar os códigos, a estrutura do curso, e aproveita
 ## Links Adicionais
 
 - [Emmet Atalhos](https://code.visualstudio.com/docs/editor/emmet): Snippets do VSCode para desenvolvimento web
-- [Curso Gratuito Github](https://www.udemy.com/course/git-e-github-para-iniciantes): Snippets do VSCode para 
+- [Curso Gratuito Github](https://www.udemy.com/course/git-e-github-para-iniciantes): Snippets do VSCode para
+- [Lógica de Programação com JavaScript](https://www.youtube.com/watch?v=lxb567HEn8k&list=PL1dUY2RYa2RidB3B134ywckDyf-FOwbv7&index=1): Playlist do youtube cobrindo boa parte do que foi estudado, utilizar como material de reforço.
 
 **Aécio Mendes Brito**
 
