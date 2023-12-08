@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora de Média - Listas e Funções</h1>
+    <p>Atualize a atividade da primeira aula para que agora, o mesmo tenha uma lista para recebimento de todas as notas,
+        e uma função isolada que receba uma lista de valores e retorne a média dos mesmos</p>
+
+
+    <h2>Infomre as médias do aluno: </h2>
+
+    <button onclick="botaoResultado()">Exibir Média</button>
+
+    <script>
+        const unidades = parseInt(prompt("Informe a quantidade de unidades:"));
+
+        for (let i = 0; i < unidades; i++) {
+            document.write(`<br><input id="nota${i}" type="number" placeholder="Nota...">`)
+        }
+
+        function botaoResultado() {
+            let notas = [];
+
+            for (let i = 0; i < unidades; i++) {
+                notas[i] = parseFloat(document.getElementById(`nota${i}`).value);
+            }
+
+            window.alert(calcularMedia(notas));
+        }
+
+        function calcularMedia(lista) {
+            var soma = 0;
+            for (var i = 0; i < lista.length; i++) {
+                soma += lista[i];
+            }
+            return soma / lista.length;
+        }
+    </script>
+
+    <p><a href="../../index.html">Voltar ao Índice</a></p>
+</body>
+
+</html>
