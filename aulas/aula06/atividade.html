@@ -31,5 +31,61 @@
 
         console.log(divide(14, 0));
     </script>
+
+    <script>
+        // Função que recebe um texto e informa o seu tamanho
+        // let text = "Qualquer texto";
+        // console.log("O texto tem ", tamanhoTexto(text));
+
+        // function tamanhoTexto(textoRecebido) {
+        //     return textoRecebido.length;
+        // }
+
+        // Função que recebe uma lista de nomes e retorna o de maior tamanho
+        // let listaNomes = ["Jessica", "Carlos", "Maria", "Suzane", "Ariosvaldo"];
+
+        // console.log(maiorNome(listaNomes));
+
+        // function maiorNome(nomes) {
+        //     let maior = nomes[0];
+        //     for(let i = 1; i < nomes.length; i++) {
+        //         if(nomes[i].length > maior.length)
+        //             maior = nomes[i];
+        //     }
+        //     return maior;
+        // }
+
+        // Fnção que recebe um número e informa se o mesmo é par
+        // var n = prompt("Qual número deseja verificar?")
+
+        // if(ehPar(n))
+        //     alert("Número é par");
+        // else
+        //     alert("Número é impar");
+
+        function ehPar(numero) {
+            return numero % 2 === 0;
+        }
+
+        //Função que recebe uma lista de números e retorna apenas os ímpares     
+        function impares(listaNumeros) {
+            let impares = [];
+
+            for(let posicaoAtual = 0; posicaoAtual < listaNumeros.length; posicaoAtual++) {
+                if(!ehPar(listaNumeros[posicaoAtual])) {
+                    impares.push(listaNumeros[posicaoAtual]);
+                }
+            }
+            return impares;
+        }
+
+        // function impares(lista) {
+        //     return lista.filter(numero => numero % 2 !== 0);
+        //}
+
+        let numerosParaExtrair = [11, 23, 8, 10];
+        console.log(impares(numerosParaExtrair));
+
+    </script>
 </body>
 </html>
