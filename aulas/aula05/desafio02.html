@@ -20,15 +20,54 @@
     <p>Total de Itens: <span id="totalItens">0</span></p>
 
     <script>
-        function adicionarItem() {            
-                atualizarTotalItens();
-            }        
+        function adicionarItem() {
+            var itemInput = document.getElementById("itemInput");
+            var item = itemInput.value.trim();
 
-        function removerItem(linha) {            
+            if (item !== "") {
+                var listaCompras = document.getElementById("listaCompras");
+
+                // Criação da nova linha
+                var novaLinha = document.createElement("li");
+
+                // Botão de remoção
+                var botaoRemover = document.createElement("button");
+                botaoRemover.innerHTML = "Remover";
+                botaoRemover.onclick = function () {
+                    removerItem(novaLinha);
+                };
+
+                // Adição do botão antes do nome do item
+                novaLinha.appendChild(botaoRemover);
+
+                // Adição do nome do item
+                novaLinha.appendChild(document.createTextNode(item));
+
+                // Adição da nova linha à lista
+                listaCompras.appendChild(novaLinha);
+
+                // Limpa o input após adicionar o item
+                itemInput.value = "";
+
+                // Atualiza o total de itens
+                atualizarTotalItens();
+            }
+        }
+
+        function removerItem(linha) {
+            var listaCompras = document.getElementById("listaCompras");
+            listaCompras.removeChild(linha);
+
+            // Atualiza o total de itens após remover
             atualizarTotalItens();
         }
 
-        function atualizarTotalItens() {            
+        function atualizarTotalItens() {
+            var totalItens = document.getElementById("totalItens");
+            var listaCompras = document.getElementById("listaCompras");
+
+            // Atualiza o total de itens
+            totalItens.textContent = listaCompras.childElementCount;
         }
     </script>
 
