@@ -3,39 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atividade - Funções</title>
 </head>
 <body>
-    <h1>Atividade - Funções </h1>
+    <h1>Atividade - Funções</h1>
 
-    <h2> Crie uma função que sempre retonre o texto "obrigado!", para tornar suas frases mais educadas.</h2>
+    <h2>Crie uma função que sempre retorne o texto "obrigado!" para tornar suas frases mais educadas.</h2>
 
     <script>
-        // function souEducado() {
-        //     return " obrigado!";
-        // }
+        // Função que sempre retorna o texto "obrigado!"
+        function souEducado() {
+            return " obrigado!";
+        }
 
-        // let texto = prompt("Informe um texto, e eu o farei educado.");
-        // alert(texto + souEducado());
+        let texto = prompt("Informe um texto, e eu o farei educado.");
+        alert(texto + souEducado());
 
+        // Função de soma
         function soma(a, b) {
             return a + b;
         }
 
+        // Função de divisão com verificação de divisão por zero
         function divide(a, b) {
-            if(b != 0)
+            if (b !== 0)
                 return a / b;
             else
-                return "não é possível dividir por zero"
+                return "não é possível dividir por zero";
         }
 
         console.log(divide(14, 0));
 
-        //funcao que recebe um texto e informa o seu tamanho
-        //função que receba uma lista de nomes e retonre o de maior nome
-        //funcao que recebe um numero e informa se ele e ou nao par
-        //funcao que recebe uma llista de numeros e retorna apenas os impares
+        // Função que recebe um texto e informa o seu tamanho
+        function tamanhoTexto(texto) {
+            return texto.length;
+        }
 
+        // Função que recebe uma lista de nomes e retorna o de maior tamanho
+        function maiorNome(nomes) {
+            let maior = "";
+            for (let nome of nomes) {
+                if (nome.length > maior.length) {
+                    maior = nome;
+                }
+            }
+            return maior;
+        }
+
+        // Função que recebe um número e informa se é par
+        function ehPar(numero) {
+            return numero % 2 === 0;
+        }
+
+        // Função que recebe uma lista de números e retorna apenas os ímpares
+        function impares(lista) {
+            let impares = [];
+            for (let numero of lista) {
+                if (!ehPar(numero)) {
+                    impares.push(numero);
+                }
+            }
+            return impares;
+        }
+
+        // function impares(lista) {
+        //     return lista.filter(numero => numero % 2 !== 0);
+        // }
+
+        // // Função que recebe um texto e retorna o texto dentro do limite de 10 caracteres
+        // function limitaTexto(texto) {
+        //     return texto.length > 10 ? texto.substring(0, 10) : texto;
+        // }
     </script>
 
     <script>
