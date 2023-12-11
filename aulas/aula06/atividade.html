@@ -16,8 +16,8 @@
             return " obrigado!";
         }
 
-        let texto = prompt("Informe um texto, e eu o farei educado.");
-        alert(texto + souEducado());
+        //let texto = prompt("Informe um texto, e eu o farei educado.");
+        //alert(texto + souEducado());
 
         // Função de soma
         function soma(a, b) {
@@ -129,6 +129,15 @@
 
         let numerosParaExtrair = [11, 23, 8, 10];
         console.log(impares(numerosParaExtrair));
+
+        let textoParaTratamento = prompt("Iinsira o texto para limitar");        
+        let resultado = limitaTexto(textoParaTratamento);
+        alert(resultado);
+      
+        // Função que recebe um texto e retorna o texto dentro do limite de 10 caracteres
+        function limitaTexto(texto) {             
+            return texto.length > 10 ? texto.substring(0, 10) : texto;
+        }
 
     </script>
 </body>
