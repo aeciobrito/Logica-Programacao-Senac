@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Atividade - Funções</title>
+</head>
+
+<body>
+    <h1>Aula Atividade - Funções</h1>
+
+    <script>
+        // Função para remover todas as consoantes de um texto
+        function removerConsoantes(texto) {
+            return texto.replace(/[^aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ]/g, '');
+        }
+
+        // Função para pegar apenas o primeiro nome de uma pessoa
+        function primeiroNome(nomeCompleto) {
+            return nomeCompleto.split(' ')[0];
+        }
+
+        // Função para obter o maior número de uma lista de números
+        function maiorNumero(lista) {
+            return Math.max(...lista);
+        }
+
+        // Função para calcular o IMC dado peso (em kg) e altura (em metros)
+        function calcularIMC(peso, altura) {
+            return peso / (altura ** 2);
+        }
+
+        // Função para converter minutos em horas
+        function converterMinutosEmHoras(minutos) {
+            return minutos / 60;
+        }
+
+        // Testes usando asserts
+        console.assert(removerConsoantes("Olá, mundo!") === "Oá uo!", "Resultado esperado é 'Oá uo!', mas recebeu: " + removerConsoantes("Olá, mundo!"));
+        console.assert(primeiroNome("John Doe") === "John");
+        console.assert(maiorNumero([10, 5, 8, 15, 3]) === 15);
+        console.assert(calcularIMC(70, 1.75) === 22.86);
+        console.assert(converterMinutosEmHoras(120) === 2);
+        console.assert(converterMinutosEmHoras(30) === 0.5);
+    </script>
+</body>
+
+</html>
