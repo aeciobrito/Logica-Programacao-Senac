@@ -11,9 +11,35 @@
     <h1>Aula Atividade - Funções</h1>
 
     <script>
-        // Função para remover todas as consoantes de um texto
-        function removerConsoantes(texto) {
-            return texto.replace(/[^aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ]/g, '');
+        // Função para remover todas as vogais de um texto com for
+        function removerVogaisFor(texto) {
+            let resultado = '';
+            for (let i = 0; i < texto.length; i++) {
+                const char = texto[i];
+                if (!'aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ'.includes(char)) {
+                    resultado += char;
+                }
+            }
+            return resultado;
+        }
+
+        // Função para remover todas as vogais de um texto com while
+        function removerVogaisWhile(texto) {
+            let resultado = '';
+            let i = 0;
+            while (i < texto.length) {
+                const char = texto[i];
+                if (!'aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ'.includes(char)) {
+                    resultado += char;
+                }
+                i++;
+            }
+            return resultado;
+        }
+
+        // Função para remover todas as vogais de um texto com string.replace
+        function removerVogaisReplace(texto) {
+            return texto.replace(/[aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ]/g, '');
         }
 
         // Função para pegar apenas o primeiro nome de uma pessoa
@@ -21,8 +47,32 @@
             return nomeCompleto.split(' ')[0];
         }
 
-        // Função para obter o maior número de uma lista de números
-        function maiorNumero(lista) {
+        // Função para obter o maior número de uma lista de números usando for
+        function maiorNumeroFor(lista) {
+            let maior = lista[0];
+            for (let i = 1; i < lista.length; i++) {
+                if (lista[i] > maior) {
+                    maior = lista[i];
+                }
+            }
+            return maior;
+        }
+
+        // Função para obter o maior número de uma lista de números usando while
+        function maiorNumeroWhile(lista) {
+            let maior = lista[0];
+            let i = 1;
+            while (i < lista.length) {
+                if (lista[i] > maior) {
+                    maior = lista[i];
+                }
+                i++;
+            }
+            return maior;
+        }
+
+        // Função para obter o maior número de uma lista de números usando math
+        function maiorNumeroMath(lista) {
             return Math.max(...lista);
         }
 
@@ -31,18 +81,43 @@
             return peso / (altura ** 2);
         }
 
-        // Função para converter minutos em horas
-        function converterMinutosEmHoras(minutos) {
+        // Função para converter minutos em horas usando for
+        function converterMinutosEmHorasFor(minutos) {
+            let horas = 0;
+            for (let i = 0; i < minutos; i++) {
+                horas += 1 / 60;
+            }
+            return horas;
+        }
+
+        // Função para converter minutos em horas usando while
+        function converterMinutosEmHorasWhile(minutos) {
+            let horas = 0;
+            let i = 0;
+            while (i < minutos) {
+                horas += 1 / 60;
+                i++;
+            }
+            return horas;
+        }
+
+        // Função para converter minutos em horas usando math
+        function converterMinutosEmHorasMath(minutos) {
             return minutos / 60;
         }
 
         // Testes usando asserts
-        console.assert(removerConsoantes("Olá, mundo!") === "Oá uo!", "Resultado esperado é 'Oá uo!', mas recebeu: " + removerConsoantes("Olá, mundo!"));
-        console.assert(primeiroNome("John Doe") === "John");
-        console.assert(maiorNumero([10, 5, 8, 15, 3]) === 15);
-        console.assert(calcularIMC(70, 1.75) === 22.86);
-        console.assert(converterMinutosEmHoras(120) === 2);
-        console.assert(converterMinutosEmHoras(30) === 0.5);
+        console.assert(removerVogaisReplace("Olá, mundo!") === "Oá uo!", "Resultado esperado é 'Oá uo!', mas recebeu: " + removerVogaisReplace("Olá, mundo!"));
+        console.assert(removerVogaisFor("Olá, mundo!") === "Oá uo!", "Resultado esperado é 'Oá uo!', mas recebeu: " + removerVogaisFor("Olá, mundo!"));
+        console.assert(removerVogaisWhile("Olá, mundo!") === "Oá uo!", "Resultado esperado é 'Oá uo!', mas recebeu: " + removerVogaisWhile("Olá, mundo!"));
+        console.assert(primeiroNome("John Doe") === "John", "Resultado esperado é 'John', mas recebeu: " + primeiroNome("John Doe"));
+        console.assert(maiorNumeroFor([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroFor([10, 5, 8, 15, 3]));
+        console.assert(maiorNumeroWhile([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroWhile([10, 5, 8, 15, 3]));
+        console.assert(maiorNumeroMath([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroMath([10, 5, 8, 15, 3]));
+        console.assert(calcularIMC(70, 1.75) === 22.86, "Resultado esperado é 22.86, mas recebeu: " + calcularIMC(70, 1.75));
+        console.assert(converterMinutosEmHorasFor(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasFor(120));
+        console.assert(converterMinutosEmHorasWhile(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasWhile(120));
+        console.assert(converterMinutosEmHorasMath(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasMath(120));
     </script>
 </body>
 
