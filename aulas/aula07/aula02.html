@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Compras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
 </head>
+
 <body>
-  <h1>Lista de Compras</h1>
-  <input id="itemInput" type="text" placeholder="Digite um item...">
-  <button onclick="adicionarItem()">Adicionar Item</button>
-  <ul id="listaDeCompras">
+    <h1>Lista de Compras</h1>
+    <input id="itemInput" type="text" placeholder="Digite um item...">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+    <ul id="listaDeCompras">
     </ul>
-  <p>Total de Itens: <span id="totalItens">0</span></p>
-  <script>
-    let itens = [];
+    <p>Total de Itens: <span id="totalItens">0</span></p>
+    <script>
+        let itens = [];
 
-    function adicionarItem() {
-      let itemInput = document.getElementById("itemInput").value;
-      let item = itemInput.trim();
-      if (item !== "") {
-        itens.push(item);
-        itemInput.value = "";
-        atualizarTotalItens();
-        atualizarLista();
-      }
-    }
+        function adicionarItem() {
+            let item = document.getElementById("itemInput").value.trim();
+            if (item !== "") {
+                itens.push(item);
+                itemInput.value = "";
 
-    function atualizarTotalItens() {
-      let totalItens = document.getElementById("totalItens");
-      totalItens.textContent = itens.length;
-    }
+                let totalItens = document.getElementById("totalItens");
+                totalItens.textContent = itens.length;
+                //atualizarTotalItens();
 
-    function atualizarLista() {
-      let listaDeCompras = document.getElementById("listaDeCompras");
-      listaDeCompras.innerHTML = "";
-      for (let item of itens) {
-        let novaLinha = document.createElement("li");
-        novaLinha.textContent = item;
-        listaDeCompras.appendChild(novaLinha);
-      }
-    }
+                let listaDeCompras = document.getElementById("listaDeCompras");
+                listaDeCompras.innerHTML = "";
+                for (let item of itens) {
+                    let novaLinha = document.createElement("li");
+                    novaLinha.textContent = item;
+                    listaDeCompras.appendChild(novaLinha);
+                }
+                //atualizarLista();
+            }
+        }
 
-    window.onload = atualizarLista;
-  </script>
+        function atualizarTotalItens() {
+            let totalItens = document.getElementById("totalItens");
+            totalItens.textContent = itens.length;
+        }
+
+        function atualizarLista() {
+            let listaDeCompras = document.getElementById("listaDeCompras");
+            listaDeCompras.innerHTML = "";
+            for (let item of itens) {
+                let novaLinha = document.createElement("li");
+                novaLinha.textContent = item;
+                listaDeCompras.appendChild(novaLinha);
+            }
+        }
+    </script>
 </body>
+
 </html>
