@@ -41,9 +41,15 @@
             let listaDeCompras = document.getElementById("listaDeCompras");
             listaDeCompras.innerHTML = "";
 
-            for (let i = 0; i < itens.length; i++) {
+            // for (let i = 0; i < itens.length; i++) {
+            //     let novaLinha = document.createElement("li");
+            //     novaLinha.innerHTML = itens[i];
+            //     listaDeCompras.appendChild(novaLinha);
+            // }
+            
+            for(let produto of itens) {
                 let novaLinha = document.createElement("li");
-                novaLinha.innerHTML = itens[i];
+                novaLinha.innerHTML = produto;
                 listaDeCompras.appendChild(novaLinha);
             }
         }
