@@ -46,9 +46,8 @@
         // Função para converter minutos em horas
         function converterMinutosEmHorasFor(minutos) {
             let hora = 0;
-            for(let i = minutos;i >= 60; i = i - 60) {
+            for(minutos; minutos >= 60; minutos = minutos - 60) {
                 hora++;
-                minutos = minutos - 60; 
             }
             return `${hora}:${minutos}`;
         }
