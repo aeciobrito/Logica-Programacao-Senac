@@ -45,17 +45,28 @@
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasFor(minutos) {
-            //utilizando um for
+            let hora = 0;
+            for(let i = minutos;i >= 60; i = i - 60) {
+                hora++;
+                minutos = minutos - 60; 
+            }
+            return `${hora}:${minutos}`;
         }
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasWhile(minutos) {
-            //utilizando um while
+            let hora = 0;
+            while (minutos >= 60) {
+                minutos = minutos - 60;
+                hora++;
+            }
+
+            return `${hora}:${minutos}`;
         }
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasMath(minutos) {
-            //utilizando um math
+            return minutos / 60;
         }
 
         // Testes usando asserts para remover vogais
@@ -67,12 +78,11 @@
         console.assert(maiorNumeroWhile([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroWhile([10, 5, 8, 15, 3]));
         console.assert(maiorNumeroMath([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroMath([10, 5, 8, 15, 3]));
         console.assert(calcularIMC(70, 1.75) === 22.86, "Resultado esperado é 22.86, mas recebeu: " + calcularIMC(70, 1.75));
-        console.assert(converterMinutosEmHorasFor(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasFor(120));
-        console.assert(converterMinutosEmHorasFor(30) === 0.5, "Resultado esperado é 0.5, mas recebeu: " + converterMinutosEmHorasFor(30));
-        console.assert(converterMinutosEmHorasWhile(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasWhile(120));
-        console.assert(converterMinutosEmHorasWhile(30) === 0.5, "Resultado esperado é 0.5, mas recebeu: " + converterMinutosEmHorasWhile(30));
-        console.assert(converterMinutosEmHorasMath(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasMath(120));
-        console.assert(converterMinutosEmHorasMath(30) === 0.5, "Resultado esperado é 0.5, mas recebeu: " + converterMinutosEmHorasMath(30));
+
+        console.assert(converterMinutosEmHorasFor(130) === "2:10h", "deu erro no for: " + converterMinutosEmHorasFor(130));
+        console.assert(converterMinutosEmHorasFor(25) === "0:25h", "deu erro no for: " + converterMinutosEmHorasFor(25));
+        console.assert(converterMinutosEmHorasFor(600) === "10:00h", "deu erro no for: " + converterMinutosEmHorasFor(600));
+        console.assert(converterMinutosEmHorasWhile(600) === "10:00h", "Deu erro While, valor: " + converterMinutosEmHorasWhile(600));
 
     </script>
 </body>
