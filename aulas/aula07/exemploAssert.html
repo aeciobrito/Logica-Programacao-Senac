@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asserts em JavaScript</title>
+</head>
+<body>
+    <h1>Exemplo de Assert</h1>
+
+    <script>
+
+        function soma(numeroA, numeroB) {
+            return numeroA + numeroB;
+        }
+
+        console.assert(soma(5,4) === 9, "Resultado esperado: 9, resultado obitido: " + soma(5,4));
+        console.assert(soma(0,0) === 0, "Resultado esperado: 0, resultado obitido: " + soma(0,0));
+        console.assert(soma(100,10) === 110, "Resultado esperado: 110, resultado obitido: " + soma(100,10));
+    </script>
+</body>
+</html>

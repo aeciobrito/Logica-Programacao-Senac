@@ -1,54 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Compras</title>
+    <title>Document</title>
 </head>
 
 <body>
     <h1>Lista de Compras</h1>
-    <input id="itemInput" type="text" placeholder="Digite um item...">
+
+    <input id="itemInput" type="text" placeholder="Digite um item..">
     <button onclick="adicionarItem()">Adicionar Item</button>
-    <ul id="listaDeCompras">
+
+    <ul id="listaDeCompras">       
+        <!--Lista ficará aqui-->
     </ul>
+
     <p>Total de Itens: <span id="totalItens">0</span></p>
+
     <script>
         let itens = [];
 
         function adicionarItem() {
             let item = document.getElementById("itemInput").value.trim();
+
             if (item !== "") {
                 itens.push(item);
                 itemInput.value = "";
-
-                let totalItens = document.getElementById("totalItens");
-                totalItens.textContent = itens.length;
-                //atualizarTotalItens();
-
-                let listaDeCompras = document.getElementById("listaDeCompras");
-                listaDeCompras.innerHTML = "";
-                for (let item of itens) {
-                    let novaLinha = document.createElement("li");
-                    novaLinha.textContent = item;
-                    listaDeCompras.appendChild(novaLinha);
-                }
-                //atualizarLista();
+                atualizarLista();
+                atualizarTotalItens();
             }
         }
 
         function atualizarTotalItens() {
-            let totalItens = document.getElementById("totalItens");
-            totalItens.textContent = itens.length;
+            totalItens.innerHTML = itens.length;
         }
 
         function atualizarLista() {
             let listaDeCompras = document.getElementById("listaDeCompras");
             listaDeCompras.innerHTML = "";
-            for (let item of itens) {
+
+            // for (let i = 0; i < itens.length; i++) {
+            //     let novaLinha = document.createElement("li");
+            //     novaLinha.innerHTML = itens[i];
+            //     listaDeCompras.appendChild(novaLinha);
+            // }
+            
+            for(let produto of itens) {
                 let novaLinha = document.createElement("li");
-                novaLinha.textContent = item;
+                novaLinha.innerHTML = produto;
                 listaDeCompras.appendChild(novaLinha);
             }
         }

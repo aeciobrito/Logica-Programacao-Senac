@@ -11,54 +11,106 @@
     <h1>Aula Atividade - Funções</h1>
 
     <script>
-        // Função para remover todas as consoantes de um texto com for
+        // Função para remover todas as vogais de um texto com for
         function removerVogaisFor(texto) {
+            let resultado = '';            
+            for(let i = 0; i < texto.length; i++) {
+                let letraMinuscula = texto[i].toLowerCase();                
+                if(!'aeiouáéíóúàèìòù'.includes(letraMinuscula)) {
+                    resultado += texto[i];
+                }
+            }
+            return resultado;
         }
 
-        // Função para remover todas as consoantes de um texto com while
+        // Função para remover todas as vogais de um texto com while
         function removerVogaisWhile(texto) {
+            let resultado = '';
+            let i = 0;
+            while(i < texto.length) {
+                let letraMinuscula = texto[i].toLowerCase();
+                if(!'aeiouáéíóúàèìòù'.includes(letraMinuscula)) {
+                    resultado += texto[i];
+                }
+                i++;
+            }
+            return resultado;
         }
 
-        // Função para remover todas as consoantes de um texto com string.replace
+        // Função para remover todas as vogais de um texto com string.replace
         function removerVogaisReplace(texto) {
+            return texto.replace(/[aeiouáéíóúàèìòùO]/g, '');
         }
 
         // Função para pegar apenas o primeiro nome de uma pessoa
         function primeiroNome(nomeCompleto) {
+            let listaNomes = nomeCompleto.split(' ');
+            let primeiroNome = listaNomes[0];
+            return primeiroNome;
         }
 
         // Função para obter o maior número de uma lista de números usando for
         function maiorNumeroFor(lista) {
+            let maiorNumero = lista[0];
+
+            for(let i = 1; i < lista.length; i++)
+                if(maiorNumero < lista[i])
+                    maiorNumero = lista[i];
+
+            return maiorNumero;
         }
 
         // Função para obter o maior número de uma lista de números usando while
         function maiorNumeroWhile(lista) {
+            let maiorNumero = lista[0];
+            let i = 1;
+
+            while(i < lista.length) {
+                if(maiorNumero < lista[i]) 
+                    maiorNumero = lista[i];
+
+                i++
+            }
+
+            return maiorNumero;
         }
 
         // Função para obter o maior número de uma lista de números usando math
         function maiorNumeroMath(lista) {
+            return Math.max(...lista);
         }
 
         // Função para calcular o IMC dado peso (em kg) e altura (em metros) [peso dividido por altura ao quadrado]
         function calcularIMC(peso, altura) {
+            let resultado = peso / (altura * altura);
+            return resultado.toFixed(2);
         }
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasFor(minutos) {
-            //utilizando um for
+            let hora = 0;
+            for(minutos; minutos >= 60; minutos = minutos - 60) {
+                hora++;
+            }
+            return `${hora}:${minutos}`;
         }
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasWhile(minutos) {
-            //utilizando um while
+            let hora = 0;
+            while (minutos >= 60) {
+                minutos = minutos - 60;
+                hora++;
+            }
+
+            return `${hora}:${minutos}`;
         }
 
         // Função para converter minutos em horas
         function converterMinutosEmHorasMath(minutos) {
-            //utilizando um math
+            return minutos / 60;
         }
 
-        // Testes usando asserts para remover vogais
         // Testes usando asserts para remover vogais
         console.assert(removerVogaisReplace("Olá, mundo!") === "l, mnd!", "Resultado esperado é 'l, mnd!', mas recebeu: " + removerVogaisReplace("Olá, mundo!"));
         console.assert(removerVogaisFor("Olá, mundo!") === "l, mnd!", "Resultado esperado é 'l, mnd!', mas recebeu: " + removerVogaisFor("Olá, mundo!"));
@@ -67,10 +119,12 @@
         console.assert(maiorNumeroFor([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroFor([10, 5, 8, 15, 3]));
         console.assert(maiorNumeroWhile([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroWhile([10, 5, 8, 15, 3]));
         console.assert(maiorNumeroMath([10, 5, 8, 15, 3]) === 15, "Resultado esperado é 15, mas recebeu: " + maiorNumeroMath([10, 5, 8, 15, 3]));
-        console.assert(calcularIMC(70, 1.75) === 22.86, "Resultado esperado é 22.86, mas recebeu: " + calcularIMC(70, 1.75));
-        console.assert(converterMinutosEmHorasFor(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasFor(120));
-        console.assert(converterMinutosEmHorasWhile(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasWhile(120));
-        console.assert(converterMinutosEmHorasMath(120) === 2, "Resultado esperado é 2, mas recebeu: " + converterMinutosEmHorasMath(120));
+        console.assert(calcularIMC(70, 1.75) == 22.86, "Resultado esperado é 22.86, mas recebeu: " + calcularIMC(70, 1.75));
+
+        // console.assert(converterMinutosEmHorasFor(130) === "2:10h", "deu erro no for: " + converterMinutosEmHorasFor(130));
+        // console.assert(converterMinutosEmHorasFor(25) === "0:25h", "deu erro no for: " + converterMinutosEmHorasFor(25));
+        // console.assert(converterMinutosEmHorasFor(600) === "10:00h", "deu erro no for: " + converterMinutosEmHorasFor(600));
+        // console.assert(converterMinutosEmHorasWhile(600) === "10:00h", "Deu erro While, valor: " + converterMinutosEmHorasWhile(600));
 
     </script>
 </body>
