@@ -1,0 +1,25 @@
+body { 
+    background-color: #224422;
+    text-align: center;
+}
+
+#tela {
+    background-color: black;
+    border: 2px solid red;    
+}
+
+button {
+    background-color: #EE9999;
+    color: white;
+    border: 1px solid red;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { background-color: #eebbbb;}
+button:disabled {
+    background-color: #dddddd;
+    cursor: not-allowed;
+}
