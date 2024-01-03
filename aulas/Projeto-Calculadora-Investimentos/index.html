@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simulador de Investimentos</h1>
+
+        <label for="aporteInicial">Aporte Inicial:</label>
+        <input type="number" id="aporteInicial" placeholder="Aporte Inicial">
+
+        <label for="meses">Quantidade de Meses:</label>
+        <input type="number" id="meses" placeholder="Quantidade de Meses">
+
+        <label for="aporteMensal">Aporte Mensal:</label>
+        <input type="number" id="aporteMensal" placeholder="Aporte Mensal">
+
+        <label for="taxaJuros">Taxa de Juros (%):</label>
+        <input type="number" id="taxaJuros" placeholder="Taxa de Juros">
+
+        <button onclick="simularInvestimento()">Simular</button>
+
+        <!-- Adicione o contêiner de resultados -->
+        <div id="resultado-container" class="resultado-container">
+            <h2>Rendimento Mês a Mês:</h2>
+            <ul id="resultado-lista"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

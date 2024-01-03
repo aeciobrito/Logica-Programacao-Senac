@@ -1,0 +1,30 @@
+body { 
+    background-color: #34495e; /* Azul escuro */
+    text-align: center;
+    color: #ecf0f1; /* Branco acinzentado para o texto */
+}
+
+#tela {
+    display: block;
+    margin: 0 auto 10px;
+    background-color: #2c3e50; /* Azul mais escuro para o canvas */
+    border: 2px solid #e74c3c; /* Vermelho escuro para a borda */
+}
+
+button {
+    display: block;
+    margin: 5px auto;
+    background-color: #3498db; /* Azul claro para os botões */
+    color: #ffffff; /* Branco para o texto dos botões */
+    border: 1px solid #2980b9; /* Azul um pouco mais escuro para a borda dos botões */
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { background-color: #2980b9; } /* Tom mais escuro ao passar o mouse */
+button:disabled {
+    background-color: #bdc3c7; /* Cinza claro para botões desativados */
+    cursor: not-allowed;
+}
