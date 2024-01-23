@@ -30,6 +30,10 @@ class MaterialBibliografico {
     _setDisponibilidade(status) { 
         this._disponivel = status;
     }
+
+    toString() {
+        return `Título: ${this.titulo}, Autor: ${this.autor}`;
+    }
 }
 
 // Subclasse Livro
@@ -38,6 +42,10 @@ class Livro extends MaterialBibliografico {
         super(titulo, autor);
         this.genero = genero;
     }
+
+    toString() {
+        return `${super.toString()}, Gênero: ${this.genero}`;
+    }
 }
 
 // Subclasse Revista
@@ -45,6 +53,10 @@ class Revista extends MaterialBibliografico {
     constructor(titulo, autor, categoria) {
         super(titulo, autor);
         this.categoria = categoria;
+    }
+
+    toString() {
+        return `${super.toString()}, Categoria: ${this.categoria}`;
     }
 }
 
@@ -91,3 +103,6 @@ for (let i = 0; i < livros.length; i++) {
     option.text = livro.titulo;
     selectLivros.add(option);
 }
+
+console.log(livros[0].toString()); // Exibe informações específicas de Livro
+console.log(livros[3].toString()); // Exibe informações específicas de Revista
