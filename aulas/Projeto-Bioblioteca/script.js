@@ -2,12 +2,12 @@ class MaterialBibliografico {
     constructor(titulo, autor) {
         this.titulo = titulo;
         this.autor = autor;
-        this.disponivel = true;
+        this._disponivel = true;
     }
 
     realizarEmprestimo() {
-        if (this.isDisponivel()) {
-            this.setDisponibilidade(false);
+        if (this._isDisponivel()) {
+            this._setDisponibilidade(false); //this._disponivel = false primeiro
             return true; // Empréstimo realizado com sucesso
         } else {
             return false; // Material já emprestado
@@ -15,15 +15,20 @@ class MaterialBibliografico {
     }
 
     realizarDevolucao() {
-        this.setDisponibilidade(true);
+        if (!this._isDisponivel()) {
+            this._setDisponibilidade(true);
+            return true; // Devolução realizada com sucesso
+        } else {
+            return false; // Material já devolvido
+        }
     }
 
-    isDisponivel() {
-        return this.disponivel;
+    _isDisponivel() {
+        return this._disponivel;
     }
 
-    setDisponibilidade(status) {
-        this.disponivel = status;
+    _setDisponibilidade(status) { 
+        this._disponivel = status;
     }
 }
 
@@ -53,22 +58,14 @@ function realizarAcao(acao) {
         return;
     }
 
-    const livroSelecionado = livros[selectedIndex - 1]; // Subtrai 1 para compensar a opção padrão
+    const livroSelecionado = livros[selectedIndex - 1];
 
     if (acao === 'emprestimo') {
-        if (livroSelecionado.isDisponivel()) {
-            const emprestimoSucesso = livroSelecionado.realizarEmprestimo();
-            exibirResultado(`Empréstimo de ${livroSelecionado.titulo}: ${emprestimoSucesso ? 'Sucesso' : 'Material já emprestado'}`);
-        } else {
-            exibirResultado(`Empréstimo de ${livroSelecionado.titulo}: Material já emprestado`);
-        }
+        const emprestimoSucesso = livroSelecionado.realizarEmprestimo();
+        exibirResultado(`Empréstimo de ${livroSelecionado.titulo}: ${emprestimoSucesso ? 'Sucesso' : 'Material já emprestado'}`);
     } else if (acao === 'devolucao') {
-        if (!livroSelecionado.isDisponivel()) {
-            livroSelecionado.realizarDevolucao();
-            exibirResultado(`Devolução de ${livroSelecionado.titulo}: Sucesso`);
-        } else {
-            exibirResultado(`Empréstimo de ${livroSelecionado.titulo}: Material já devolvido`);
-        }
+        const devolucaoSucesso = livroSelecionado.realizarDevolucao();
+        exibirResultado(`Devolução de ${livroSelecionado.titulo}: ${devolucaoSucesso ? 'Sucesso' : 'Material já devolvido'}`);
     }
 }
 
@@ -94,4 +91,3 @@ for (let i = 0; i < livros.length; i++) {
     option.text = livro.titulo;
     selectLivros.add(option);
 }
-
