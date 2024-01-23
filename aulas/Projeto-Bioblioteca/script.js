@@ -1,33 +1,33 @@
 class MaterialBibliografico {
-        constructor(titulo, autor) {
-            this.titulo = titulo;
-            this.autor = autor;
-            this.disponivel = true;
-        }
-    
-        realizarEmprestimo() {
-            if (this.isDisponivel()) {
-                this.setDisponibilidade(false);
-                return true; // Empréstimo realizado com sucesso
-            } else {
-                return false; // Material já emprestado
-            }
-        }
-    
-        realizarDevolucao() {
-            this.setDisponibilidade(true);
-        }
-    
-        isDisponivel() {
-            return this.disponivel;
-        }
-    
-        setDisponibilidade(status) {
-            this.disponivel = status;
-        }
+    constructor(titulo, autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.disponivel = true;
     }
-    
-    
+
+    realizarEmprestimo() {
+        if (this.isDisponivel()) {
+            this.setDisponibilidade(false);
+            return true; // Empréstimo realizado com sucesso
+        } else {
+            return false; // Material já emprestado
+        }
+    }
+
+    realizarDevolucao() {
+        this.setDisponibilidade(true);
+    }
+
+    isDisponivel() {
+        return this.disponivel;
+    }
+
+    setDisponibilidade(status) {
+        this.disponivel = status;
+    }
+}
+
+
 // Subclasse Livro
 class Livro extends MaterialBibliografico {
     constructor(titulo, autor, genero) {
@@ -73,7 +73,7 @@ function realizarAcao(acao) {
     }
 }
 
-    
+
 
 function exibirResultado(mensagem) {
     const resultadoDiv = document.getElementById("resultado");
