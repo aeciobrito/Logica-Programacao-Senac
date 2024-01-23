@@ -89,9 +89,11 @@ const livros = [
 // Preencher dinamicamente as opções do select
 const selectLivros = document.getElementById("livros");
 
-livros.forEach((livro, index) => {
+for (let i = 0; i < livros.length; i++) {
+    const livro = livros[i];
     const option = document.createElement("option");
-    option.value = index + 1; // Adiciona 1 para evitar o valor 0, que representa a opção padrão
+    option.value = i + 1; // Adiciona 1 para evitar o valor 0, que representa a opção padrão
     option.text = livro.titulo;
     selectLivros.add(option);
-});
+}
+
