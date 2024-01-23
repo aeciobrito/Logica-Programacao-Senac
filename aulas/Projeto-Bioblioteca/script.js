@@ -27,7 +27,6 @@ class MaterialBibliografico {
     }
 }
 
-
 // Subclasse Livro
 class Livro extends MaterialBibliografico {
     constructor(titulo, autor, genero) {
@@ -73,8 +72,6 @@ function realizarAcao(acao) {
     }
 }
 
-
-
 function exibirResultado(mensagem) {
     const resultadoDiv = document.getElementById("resultado");
     resultadoDiv.innerHTML += `<p>${mensagem}</p>`;
@@ -84,6 +81,7 @@ const livros = [
     new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", "Fantasia"),
     new Livro("Harry Potter e a Pedra Filosofal", "J.K. Rowling", "Fantasia"),
     new Livro("Crepúsculo", "Stephenie Meyer", "Romance"),
+    new Revista("National Geographic", "National Geographic Society", "Ciência")
 ];
 
 // Preencher dinamicamente as opções do select
