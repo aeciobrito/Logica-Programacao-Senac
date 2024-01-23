@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sistema de Biblioteca</h1>
+
+        <select id="livros">
+            <option value="0">Selecione um livro...</option>
+            <!-- O conteúdo do select será preenchido dinamicamente pelo JavaScript -->
+        </select>
+
+        <button onclick="realizarAcao('emprestimo')">Realizar Empréstimo</button>
+        <button onclick="realizarAcao('devolucao')">Realizar Devolução</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
