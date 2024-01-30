@@ -22,6 +22,15 @@ Exercício:
     - Crie um limite de vida máxima para o personagem
     - Crie uma função de recuperar vida que recebe um total de pontos para recuperar
     - A recuperação de via não pode fazer o personaem ir além da vida máxima
+
+Parte 3: Crie a herança
+    - Crie as classes Arqueiro, Guerreiro e Mago
+    - Todas as 3 classes herdam de personagem
+
+Alterações do Guerreiro:
+    - Acrescente a propriedade "escudo" na classe Guerreiro.
+    - A função tomarDano do Guerreiro deve proteger seus pontos de vida,
+    abatendo o dano sofrido dos pontos do seu escudo.
 */
 
 class Personagem {
@@ -74,8 +83,26 @@ class Personagem {
     }
 }
 
-let personagem1 = new Personagem("Arthur", 10, 12, 100, 1, true);
-let personagem2 = new Personagem("Gendalf", 2, 8, 85, 1);
+class Arqueiro extends Personagem {
+    constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
+        super(nome, ataque, defesa, vida, posicao, vivo)
+    }
+}
+
+class Guerreiro extends Personagem {
+    constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
+        super(nome, ataque, defesa, vida, posicao, vivo)
+    }
+}
+
+class Mago extends Personagem {
+    constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
+        super(nome, ataque, defesa, vida, posicao, vivo)
+    }
+}
+
+let personagem1 = new Guerreiro("Arthur", 10, 12, 100, 1, true);
+let personagem2 = new Mago("Gendalf", 2, 8, 85, 1);
 
 console.log(personagem1);
 console.log(personagem2);
