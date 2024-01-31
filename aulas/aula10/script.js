@@ -34,6 +34,11 @@ Alterações do Guerreiro:
     
     - Acrescente a sobrescrita da função atacar, verificando a posição do inimigo
     - Se o inimigo estiver a mais de 1 de distância, o guerreiro não pode atacar.
+
+Alterações do Arqueiro:
+    - O arqueiro só pode atacar se a distancia dele para o oponente for maior do que 3.
+    - O arqueiro tem um totalDeFlechas.
+    - O arqueiro só pode atacar se o totla de flechas for maior que 0
 */
 
 class Personagem {
