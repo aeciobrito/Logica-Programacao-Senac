@@ -30,7 +30,10 @@ Parte 3: Crie a herança
 Alterações do Guerreiro:
     - Acrescente a propriedade "escudo" na classe Guerreiro.
     - A função tomarDano do Guerreiro deve proteger seus pontos de vida,
-    abatendo o dano sofrido dos pontos do seu escudo.
+    abatendo o dano sofrido dos pontos do seu escudo.    
+    
+    - Acrescente a sobrescrita da função atacar, verificando a posição do inimigo
+    - Se o inimigo estiver a mais de 1 de distância, o guerreiro não pode atacar.
 */
 
 class Personagem {
@@ -104,6 +107,14 @@ class Guerreiro extends Personagem {
         }
         super.tomarDano(quantidade);
     }
+
+    atacar(inimigo) {
+        if(Math.abs(inimigo.posicao - this.posicao) < 2) {
+            super.atacar(inimigo);
+        } else {
+            console.log(`${inimigo.nome} muito distante para ${this.nome} atacar.`)
+        }
+    }
 }
 
 class Mago extends Personagem {
@@ -112,8 +123,8 @@ class Mago extends Personagem {
     }
 }
 
-let personagem1 = new Guerreiro("Aragorn", 10, 12, 100, 1, true, 5);
-let personagem2 = new Mago("Gendalf", 12, 8, 85, 1);
+let personagem1 = new Guerreiro("Aragorn", 10, 12, 100, 5, true, 5);
+let personagem2 = new Mago("Gendalf", 12, 8, 85, 2);
 
 console.log(personagem1.atacar(personagem2));
 console.log(personagem2.atacar(personagem1));
