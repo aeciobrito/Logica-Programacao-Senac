@@ -42,6 +42,15 @@ Alterações do Arqueiro:
 
     - Crie a função recarregarFlehca, que recebe por parametro a quantidade a recarregar
     - A função deve retornar o total de flechas recarregadas.
+
+Alterações do Mago:
+    - O mago precisa de pontos de magia para atacar.
+    - Os pontos de magia do mago são inicalmente metade dos seus pontos de vida
+    - Ao atacar, o mago gasta 2 pontos de magia.
+    - Caso não haja mais pontos de magia, o mago perde 4 pontos de vida ao atacar.
+
+    - O mago precisa estar em uma distancia segura para atacar, mais de 1 de distancia.
+    - O mago não pode estar muito longe para atacar, menos de 6 de distancia.
 */
 
 class Personagem {
