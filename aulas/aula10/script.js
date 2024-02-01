@@ -39,6 +39,9 @@ Alterações do Arqueiro:
     - O arqueiro só pode atacar se a distancia dele para o oponente for maior do que 3.
     - O arqueiro tem um totalDeFlechas.
     - O arqueiro só pode atacar se o total de flechas for maior que 0
+
+    - Crie a função recarregarFlehca, que recebe por parametro a quantidade a recarregar
+    - A função deve retornar o total de flechas recarregadas.
 */
 
 class Personagem {
@@ -107,6 +110,11 @@ class Arqueiro extends Personagem {
             console.log(`${this.nome} não pode atacar ${inimigo.nome} pois estão próximos ${this.posicao} - ${inimigo.posicao}`);
         }
     }
+
+    recarregarFlecha(quantidade) {
+        this.totalDeFlechas = this.totalDeFlechas + quantidade;
+        return this.totalDeFlechas;
+    }
 }
 
 class Guerreiro extends Personagem {
@@ -142,7 +150,7 @@ class Mago extends Personagem {
 
 let persoGuerreiro = new Guerreiro("Aragorn", 10, 12, 100, 5, true, 5);
 let persoMago = new Mago("Gendalf", 12, 8, 85, 2);
-let persoArqueiro = new Arqueiro("Legolas", 18, 9, 60, 15, true, 2);
+let persoArqueiro = new Arqueiro("Legolas", 18, 9, 60, 15, true, 7);
 let persoArqueiro2 = new Arqueiro("Robin Hood", 15, 9, 60, 11, true, 8);
 
 // console.log(persoGuerreiro.atacar(persoMago));
@@ -151,3 +159,6 @@ let persoArqueiro2 = new Arqueiro("Robin Hood", 15, 9, 60, 11, true, 8);
 console.log(persoArqueiro.atacar(persoArqueiro2));
 console.log(persoArqueiro.atacar(persoArqueiro2));
 console.log(persoArqueiro.atacar(persoArqueiro2));
+
+
+console.log(`Total de flechas do ${persoArqueiro.nome} agora é ${persoArqueiro.recarregarFlecha(5)}`);
