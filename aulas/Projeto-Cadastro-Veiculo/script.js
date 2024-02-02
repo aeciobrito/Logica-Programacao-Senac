@@ -62,7 +62,25 @@ function exibirVeiculos() {
 
     for (let i = 0; i < veiculos.length; i++) {
         const veiculoItem = document.createElement("li");
-        veiculoItem.innerHTML = veiculos[i].modelo;
+        const veiculoCard = criarVeiculoCard(veiculos[i]);
+        veiculosList.appendChild(veiculoCard);
         veiculosList.appendChild(veiculoItem);
     }
+}
+
+function criarVeiculoCard(veiculo) {
+    const veiculoCard = document.createElement("div");
+    veiculoCard.className = "veiculo-card";
+
+    const imagemVeiculo = document.createElement("img");
+    imagemVeiculo.src = veiculo.imagemURL;
+    imagemVeiculo.className = "veiculo-imagem";
+    imagemVeiculo.alt = `${veiculo.marca} ${veiculo.modelo}`;
+    veiculoCard.appendChild(imagemVeiculo);
+
+    const detalhesVeiculo = document.createElement("div");
+    detalhesVeiculo.textContent = veiculo.exibirDetalhes() + ` - Distância máxima: ${veiculo.calcularDistanciaMaxima()} km`;
+    veiculoCard.appendChild(detalhesVeiculo);
+
+    return veiculoCard;
 }
