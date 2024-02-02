@@ -8,6 +8,11 @@
 
 #Parte 2:
     - Crie uma função cadastrarVeiculo
+
+#Exercício:
+    - Adicione ao veículo um anoDeFabricacao
+    - Adicione uma função que retorne se o veículo é isento de IPVA naquele ano.
+    - Utilize o Date().getFullYear();
 */
 class Veiculo {
     constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL) {
