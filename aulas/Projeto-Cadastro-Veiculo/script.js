@@ -5,6 +5,9 @@
     - Adicione um metodo calcularDistanciaMaxima, que retornará a autonomia * capacidadeTanque
     - Adicione um metodo exibirDetalhes, que retornará os dados concatenados de:
         * marca, modelo, cor, preco.toFixed(2)
+
+#Parte 2:
+    - Crie uma função cadastrarVeiculo
 */
 class Veiculo {
     constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL) {
@@ -28,8 +31,26 @@ class Veiculo {
 
 let veiculos = [];
 
-veiculos.push(new Veiculo("fiat", "uno", 60000, "branco", 16, 90, "www.url.com"));
-veiculos.push(new Veiculo("fiat", "palio", 90000, "vermelho", 14, 90, "www.url88.com"));
-veiculos.push(new Veiculo("chrevrolet", "cruze", 120000, "amarelo", 11, 90, "www.url45.com"));
+// Função para cadastrar veículo
+function cadastrarVeiculo() {
+    //recebimento de valores do HTML
+    const marca = document.getElementById("marca").value;
+    const modelo = document.getElementById("modelo").value;
+    const preco = parseFloat(document.getElementById("preco").value);
+    const cor = document.getElementById("cor").value;
+    const autonomia = parseInt(document.getElementById("autonomia").value);
+    const capacidadeTanque = parseInt(document.getElementById("capacidadeTanque").value);
+    const imagemURL = document.getElementById("imagemURL").value;    
 
-console.log(veiculos);
+    // Instanciar um novo objeto veículo, passando os valores pedidos no construtor
+    const veiculo = new Veiculo(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL);
+
+    // Adicionar o veículo a nossa lista "banco de dados"
+    veiculos.push(veiculo);
+
+    // Atualiza a exibição
+    console.log(veiculos);
+
+    // Limpar formulário
+    document.getElementById("veiculoForm").reset();
+}
