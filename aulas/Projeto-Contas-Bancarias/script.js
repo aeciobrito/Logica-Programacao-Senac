@@ -70,3 +70,15 @@ class ContaPoupanca extends Conta {
 
 let contas = [];
 let clientes = [];
+
+function cadastrarCliente() {
+    // pegar dados da tela
+    const nome = document.getElementById("nomeCliente").value;
+    const cpf = document.getElementById("cpfCliente").value;
+
+    // instanciar novo cliente
+    const cliente = new Cliente(nome, cpf);
+
+    // adicionar esse cliente a lista de clientes
+    clientes.push(cliente);
+}
