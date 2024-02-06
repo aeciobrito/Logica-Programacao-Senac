@@ -70,20 +70,3 @@ class ContaPoupanca extends Conta {
 
 let contas = [];
 let clientes = [];
-
-// let clienteA = new Cliente("Fulano","1234567890");
-// clientes.push(clienteA);
-
-// let clienteB = new Cliente("Beltrano","0987654321");
-// clientes.push(clienteB);
-
-// let contaX = new ContaCorrente(clienteA, 123, 100, 150);
-// contas.push(contaX);
-
-// let contaY = new ContaPoupanca(clienteB, 111, 100, 0.01);
-// contas.push(contaY);
-
-// contaY.transferir(150, contaX);
-
-// console.log("Conta Y: ", contaY);
-// console.log("Conta X: ", contaX);

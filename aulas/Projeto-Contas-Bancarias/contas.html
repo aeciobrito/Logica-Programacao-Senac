@@ -1,1 +1,53 @@
-<script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Contas Bancárias</title>
+</head>
+<body>
+    <h1>Cadastro de Clientes</h1>
+
+    <form id="clienteForm">
+        <label for="nomeCliente">Nome do Cliente:</label>
+        <input type="text" id="nomeCliente">
+
+        <label for="cpfCliente">CPF do Cliente:</label>
+        <input type="text" id="cpfCliente" required>
+
+        <button type="button" onclick="cadastrarCliente()">Cadastrar Cliente</button>
+    </form>
+
+    <h1>Cadastro de Contas</h1>
+
+    <form id="contaForm">
+        <label for="numero">Número da Conta:</label>
+        <input type="number" id="numero" required>
+
+        <label for="saldo">Saldo Inicial:</label>
+        <input type="number" id="saldo" required>
+
+        <label for="tipoConta">Tipo de Conta:</label>
+        <select id="tipoConta" required>
+            <option value="ContaCorrente">Conta Corrente</option>
+            <option value="ContaPoupanca">Conta Poupança</option>
+        </select>
+
+        <label for="cliente">Selecione o Cliente:</label>
+        <select id="cliente" required>
+            <!-- Adicione as opções dinamicanete usando JavaScript -->
+        </select>
+
+        <button type="button" onclick="cadastrarConta()">Cadastrar Conta</button>
+    </form>
+
+    <!--Exibição de Cadastros-->
+    <h2>Clientes Cadastrados</h2>
+    <ul id="clientesList"></ul>
+
+    <h2>Contas Bancárias Cadastradas</h2>
+    <ul id="contasList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
