@@ -81,4 +81,47 @@ function cadastrarCliente() {
 
     // adicionar esse cliente a lista de clientes
     clientes.push(cliente);
+
+    atualizarSeletorClientes();
+}
+
+function atualizarSeletorClientes() {
+    const seletorClientes = document.getElementById("cliente");
+
+    seletorClientes.innerHTML = "";
+
+    clientes.forEach(cliente => {
+        const option = document.createElement("option");
+        option.value = cliente.cpf;
+        option.textContent = cliente.nome;
+        seletorClientes.appendChild(option);
+    });
+}
+
+function cadastrarConta() {
+    // pegar os dados da tela
+    const numero = parseInt(document.getElementById("numero").value);
+    const saldo = parseFloat(document.getElementById("saldo").value);
+    const tipoConta = document.getElementById("tipoConta").value;
+
+    // identificar o cliente selecionado na lista de clientes
+    const clienteSelecionado = document.getElementById("cliente").value;
+    const cliente = clientes.find(c => c.cpf === clienteSelecionado);
+
+    // instanciar uma nova conta, a partir do tipo de conta selecionada
+
+    let conta;
+    switch(tipoConta) {
+        case "ContaCorrente":
+            conta = new ContaCorrente(cliente, numero, saldo, 100);
+            break;
+        case "ContaPoupanca":
+            conta = new ContaPoupanca(cliente, numero, saldo, 0.01);
+            break;
+        default:
+            alert("tipo selecionado inválido!");
+            break;
+    }
+
+    contas.push(conta);
 }
